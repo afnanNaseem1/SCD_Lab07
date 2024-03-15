@@ -17,4 +17,4 @@ const stopServerAfterSeconds = 10;
 setTimeout(() => {
     console.log(`Stopping server after ${stopServerAfterSeconds} seconds...`);
     server.close();
-}, stopServerAfterSeconds * 1000);
+}, stopServerAfterSeconds * 500);
