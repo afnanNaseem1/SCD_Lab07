@@ -10,4 +10,11 @@ app.use('/api/tasks', require('./routes/taskRoutes'));
 
 const PORT = 3000;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+const server = app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+// Stop the server after a few seconds (e.g., 10 seconds)
+const stopServerAfterSeconds = 10;
+setTimeout(() => {
+    console.log(`Stopping server after ${stopServerAfterSeconds} seconds...`);
+    server.close();
+}, stopServerAfterSeconds * 1000);
